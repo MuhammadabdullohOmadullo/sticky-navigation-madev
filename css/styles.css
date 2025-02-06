@@ -1,4 +1,17 @@
 /* GLOBAL */
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;800&display=swap);
+
+@font-face {
+  font-family: 'Cassandra Personal Use';
+  src: url('../fonts/CassandraPersonalUse-Regular.woff2') format('woff2'),
+      url('../fonts/CassandraPersonalUse-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 html {
   box-sizing: border-box;
   height: 100%;
@@ -17,29 +30,155 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   background: #fff;
   color: #222;
 }
 
-img {
+/* img {
   max-width: 100%;
   height: auto;
-}
+} */
 
-
-/* CONTAINER  */
 .container {
+  max-width: 1200px;
   width: 100%;
-max-width: 1200px;
-padding-left: 50px;
-padding-right: 50px;
-margin-left: auto;
-margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
-/* MAIN-CONTENT */
-.main-content {
-flex-grow: 1;
+
+.active {
+  color: tomato !important;
+}
+
+/* SITE-HEADER */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition:  background-color 0.5s ease;
+}
+
+.site-header.white-header {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background-color: #fff;
+}
+
+.site-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-logo {
+  padding: 10px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: border 0.5s;
+  background-color: #fff;
+}
+
+.site-header.white-header.site-logo {
+  border-color: #000;
+  border-radius: 5px;
+}
+
+.site-logo:hover {
+  opacity: 0.8;
+}
+
+.site-logo:active {
+  opacity: 0.6;
+}
+
+.site-logo-img {
+  display: flex;
+  width: 50px;
+  object-fit: cover;
+}
+
+/* SITENAV */
+.sitenav__list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.sitenav__item:not(:last-child) {
+  margin-right: 15px;
+  font-weight: 500;
+}
+
+.sitenav__link {
+  text-decoration: none;
+  transition: color 0.3s;
+  color: #fff;
+}
+
+.site-header.white-header .sitenav__link {
+  color: #000;
+}
+
+.sitenav__link:hover {
+  color: tomato;
+}
+
+/* MAIN-CONTANT */
+.main-contant {
+  flex-grow: 1;
+}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  background-image: url(../images/main-background.jpg);
+  background-size: cover;
+  background-position: center 0;
+  background-repeat: no-repeat;
+}
+
+.hero-title {
+  font-size: 50px;
+  font-family: 'Cassandra Personal Use';
+  color: #fff;
+  font-size: normal;
+}
+
+.hero-text {
+  font-style: italic;
+  color: #fff;
+}
+
+.feature-textt {
+  padding-bottom: 50px;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #666;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #333;
 }
